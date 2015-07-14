@@ -11,18 +11,18 @@ spnum(new int[digit]{})
 
 SpecialNumber::~SpecialNumber()
 {
-	delete this->spnum;
+	delete spnum;
 }
 
 const bool SpecialNumber::operator++()
 {
-	this->spnum[this->digit-1] = this->spnum[this->digit-1] + 1;
-	for (int i = (this->digit - 1); i >= 0; --i)
+	spnum[digit-1] = spnum[digit-1] + 1;
+	for (int i = (digit - 1); i >= 0; --i)
 	{
-		if (this->spnum[i] >= this->digitlength[i]){
-			this->spnum[i] = 0;
+		if (spnum[i] >= digitlength[i]){
+			spnum[i] = 0;
 			if (i != 0){
-				this->spnum[i-1] = this->spnum[i-1] + 1;
+				spnum[i-1] = spnum[i-1] + 1;
 			}else{return 0;}
 		}else{ return 1;}
 	}
